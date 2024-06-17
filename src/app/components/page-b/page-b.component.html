@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div *ngFor="let auto of autos" class="col-xs-12 col-sm-6 col-md-4">
+        <ul>
+          <li>
+            <a id="ButtonCarrito"data-bs-toggle="modal" data-bs-target="#carrito" (click)="ObtenerUnModelo(auto.id)" (click)="GuardarAuto(auto.name)">
+              <div id="CarName">
+                {{auto.name}}
+              </div>
+            </a>
+          </li>
+        </ul> 
+        <div class="modal fade" data-bs-backdrop="static" id="carrito">
+          <div class="modal-dialog modal-dialog-scrolleable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn-close" data-bs-dismiss="modal"></button>     
+                </div>
+                <div class="modal-body">
+                  <div >
+                    @if (BuscarByModeloCant==0) {
+                      <p>No hay modelos disponibles</p>
+                    }@else {
+                      <p>Modelos del auto {{autoModal}}</p>
+                      <p *ngFor="let modelo of BuscarByModelo">{{modelo.name}}</p>
+                    }
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+body{
+    background-image: url('../../../assets/images/animated/fondo.svg');
+    height: 100vh;
+}
+.card {
+    border: 1px solid #555454; /* Borde de la carta */
+    border-radius: 10px; /* Redondea las esquinas de la carta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la carta */
+    width: 18rem; /* Ancho de la carta */
+  }
+  
+  .card-img-top {
+    border-top-left-radius: 10px; /* Redondea la esquina superior izquierda de la imagen */
+    border-top-right-radius: 10px; /* Redondea la esquina superior derecha de la imagen */
+  }
+  
+  .card-body {
+    padding: 25px; /* Espaciado interior del cuerpo de la carta */
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Tamaño del título */
+    font-weight: bold; /* Peso de la fuente del título */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Tamaño del texto */
+  }
+#cajaPadre{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+#cajaHijo1{
+    background-color: aliceblue;
+    border: 1px solid #555454; /* Borde de la carta */
+    border-radius: 10px; /* Redondea las esquinas de la carta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la carta */
+}
+label{
+    margin: 15px;
+}

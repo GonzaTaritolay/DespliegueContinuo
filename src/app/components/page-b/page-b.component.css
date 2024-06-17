@@ -1,0 +1,19 @@
+
+ul{
+    list-style: none;
+}
+a #CarName{
+    margin: 30px;
+    background-color:#3090aa;
+    padding: 5px;
+    border-radius: 15px;
+    border:solid 1px rgb(131, 130, 130);
+    color:rgb(255, 255, 255);
+    text-align: center;
+    transition: all 450ms;
+    width: 15vw;
+}
+a #CarName:hover{
+    color: rgb(255, 255, 255);
+    background-color: #2b768f;
+}

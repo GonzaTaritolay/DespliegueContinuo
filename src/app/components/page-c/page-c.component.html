@@ -1,0 +1,84 @@
+<body>
+        <div id="cajaPadre" class="row">
+                <div id="cajaHijo1" class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                        <form > 
+                                <div class="mb-3">
+                                        <label class="form-label">Seleccione pais</label>
+                                        <select  class="form-select" (change)="ObtenerIsoPais($event)">
+                                                <option *ngFor="let pais of paises"  >{{pais.name}}</option>          
+                                        </select>
+                                </div>
+                                
+                            
+                                 <div class="mb-3" *ngIf="estados.length>0">
+                                    <label class="form-label">Seleccione estado/provincia</label>
+                                    <select  class="form-select" (change)="ObtenerIsoEstado($event)" >
+                                            <option *ngFor="let estado of estados" > {{estado.name}}</option> 
+                                    </select>
+                                </div>
+                                
+                            
+                                <div class="mb-3" *ngIf="ciudades.length>0">
+                                    <label class="form-label">Seleccione ciudad/departamento</label>
+                                    <select class="form-select" (change)="ObtenerClima($event)" >
+                                            <option *ngFor="let ciudad of ciudades" >{{ciudad.name}}</option> 
+                                    </select>
+                                </div>
+                        </form>
+                </div>
+        
+        @if (lugar) {
+                <div id="cajaHijo2" class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                        <div class="card" style="width: 18rem;">
+                                @switch (IdImg) {
+                                        @case ("Thunderstorm") {
+                                                <img class="card-img-top" src="assets/images/animated/thunder.svg">
+                                        } 
+                                        @case ("Drizzle") {
+                                                <img  class="card-img-top" src="assets/images/animated/rainy-2.svg">
+                                        }
+                                        @case ("Rain") {
+                                                <img class="card-img-top" src="assets/images/animated/rainy-7.svg">
+                                        }
+                                        @case ("Snow") {
+                                                <img class="card-img-top" src="assets/images/animated/snowy-6.svg">
+                                        }
+                                        @case ("Clear") {
+                                                @if (horas>6 && horas<19) {
+                                                        <img class="card-img-top" src="assets/images/animated/day.svg">
+                                                }@else{
+                                                        <img class="card-img-top" src="assets/images/animated/night.svg">
+                                                }       
+                                        }
+                                        @case ("Atmosphere") {
+                                                <img class="card-img-top" src="assets/images/animated/weather.svg">
+                                        }
+                                        @case ("Clouds") {
+                                                @if (horas>6 && horas<19) {
+                                                        <img class="card-img-top" src="assets/images/animated/cloudy-day-1.svg">
+                                                }@else{
+                                                        <img class="card-img-top" src="assets/images/animated/cloudy-night-1.svg">
+                                                }   
+                                        }
+                                        @default {
+                                                <img src="">
+                                        }
+                                }
+                                <div class="card-body">
+                                  <h5 class="card-title"><i class="bi bi-signpost-fill"></i>  {{lugar}}</h5>
+                                  <p class="card-text"><i class="bi bi-pencil-square"></i> {{descripcion}}</p>
+                                  <p class="card-text"><i class="bi bi-tornado"></i>  Viento de {{viento}} </p>
+                                  <p class="card-text"><i class="bi bi-thermometer"></i>Temperatura de {{temperatura}}ºC</p>
+                                </div>
+                        </div>  
+                </div>
+        }
+        </div>        
+
+</body>
+
+
+
+
+
+  

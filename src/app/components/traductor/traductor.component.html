@@ -1,0 +1,58 @@
+<body>
+    
+        <form>
+            <div class="container-fluid"  >
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <img class="" src="../../../assets/images/static/espana.png" alt="">
+                            <img class="" src="../../../assets/images/static/francia.png" alt="">
+                            <img class="" src="../../../assets/images/static/italia.png" alt="">
+                            <img class="" src="../../../assets/images/static/reino-unido.png" alt="">
+                        </div>  
+                    </div>
+                </div>   
+                <div class="row">
+                    <div class="col"> 
+                    <label class="form-label" for="texto" required></label >
+                    <input (change)="Detectar()" id="inputResp" class="form-control" type="text" name="texto" [(ngModel)]="texto" placeholder="Ingrese Texto. . .">
+
+                    <label class="form-label"for="target" ></label>
+                    <select class="form-select" name="target" id="target" [(ngModel)]="target">
+                        <option *ngFor="let lenguaje of lenguajes">{{lenguaje.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="ObtenerSource()" >Traducir</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <img class="" src="../../../assets/images/static/espana.png" alt="">
+                            <img class="" src="../../../assets/images/static/francia.png" alt="">
+                            <img class="" src="../../../assets/images/static/italia.png" alt="">
+                            <img class="" src="../../../assets/images/static/reino-unido.png" alt="">
+                        </div>  
+                    </div>
+                </div>
+               @if (cantidadText > 0) {
+                <div class="row">
+                    <div class="col"> 
+                        <p id="cajaResponsiva">{{textoTraducido}}</p>
+                    </div>
+                </div>
+            }
+            </div>
+        </form>
+</body>
+
+
+<!--  
+
+
+    
+            <label class="form-label" for="source">Idioma</label>
+            <select class="form-select"  name="source" id="source" [(ngModel)]="source">
+                <option *ngFor="let lenguaje of lenguajes">{{lenguaje.language}}</option>
+            </select>
+            <br>
+         -->

@@ -1,0 +1,58 @@
+body{
+    background-image: url('../../../assets/images/animated/fondo.svg');
+    height: 100vh;
+    
+}
+
+form{
+    margin: auto;
+    color: aliceblue;
+    width: 50vw;
+    height: 100vh;
+}
+
+#inputResp{
+    width: 50vw;
+    height: 20vh;
+   
+}
+select{
+    width: 50vw;
+}
+img{
+    width: 50px;
+    margin: 30px 20px;
+}
+button{
+    margin-top: 20px;
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: bold;
+    width: 50vw;
+    height: 50px;
+}
+#cajaResponsiva{
+    width: 50vw;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media(max-width: 460px){
+    img{
+        
+        margin: 5px;
+       
+    }
+    form{
+        margin-top: 20px;
+    }
+    select{
+        margin-bottom: 20px;
+    }
+}
