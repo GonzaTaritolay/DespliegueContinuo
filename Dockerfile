@@ -1,19 +1,12 @@
-FROM  node:14-alpine as build-step
-
-RUN mkdir -p /app
-
+FROM node:21 as builder
 WORKDIR /app
-
-COPY package.json /app
-
+COPY . .
 RUN npm install
+RUN npm run build
 
-COPY . /app
-
-RUN npm run build --prod
-
-#SEGUNDA ETAPA
-FROM nginx:1.17.1-alpine
-
-COPY --from=build-step /app/dist/ /usr/share/nginx/html
-
+FROM nginx:alpine
+COPY --from=builder /app/dist/bootsrap/browser /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY mime.types /etc/nginx/mime.types
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
